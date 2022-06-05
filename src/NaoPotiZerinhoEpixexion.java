@@ -3,12 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
+
 /**
  *
  * @author kezia
  */
-public class Divisão {
-    int n1;
-    int n2;
-    
+public class NaoPotiZerinhoEpixexion extends Exception {
+
+    public NaoPotiZerinhoEpixexion() {
+        super("Divisão inválida");
+    }
+
+    public NaoPotiZerinhoEpixexion(String message) {
+        super(message);
+    }
 }
