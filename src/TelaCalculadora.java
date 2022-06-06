@@ -58,6 +58,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
         jButton16 = new javax.swing.JButton();
         jtfResultado1 = new javax.swing.JTextField();
         jButtonAllc = new javax.swing.JButton();
+        jButtonFatorial = new javax.swing.JButton();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
@@ -229,6 +230,13 @@ public class TelaCalculadora extends javax.swing.JFrame {
             }
         });
 
+        jButtonFatorial.setText("n!");
+        jButtonFatorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFatorialActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -242,7 +250,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jtfResultado1)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton0, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -265,7 +273,10 @@ public class TelaCalculadora extends javax.swing.JFrame {
                                         .addComponent(jButtonPont, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(7, 7, 7)
                                         .addComponent(jButtonMais, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(jButtonAllc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jButtonFatorial, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonAllc, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -310,7 +321,8 @@ public class TelaCalculadora extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonAllc, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jButtonAllc, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButtonFatorial, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButtondividir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(5, 5, 5)
@@ -506,6 +518,13 @@ public class TelaCalculadora extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfResultado1ActionPerformed
 
+    private void jButtonFatorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFatorialActionPerformed
+        // TODO: o que fazer quando o usuário não informou um número previamente
+        numero1 = Double.parseDouble(num1);
+        int resultado = (int) Calculadora.fatorial(numero1);
+        jtfResultado1.setText(String.valueOf(resultado));
+    }//GEN-LAST:event_jButtonFatorialActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -554,6 +573,7 @@ public class TelaCalculadora extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonAllc;
+    private javax.swing.JButton jButtonFatorial;
     private javax.swing.JButton jButtonMais;
     private javax.swing.JButton jButtonMenos;
     private javax.swing.JButton jButtonMult;
