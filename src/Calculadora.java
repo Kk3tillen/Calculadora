@@ -30,5 +30,16 @@ public class Calculadora {
     public static double soma(double num1, double num2) {
         return num1 + num2;
     }
+    
+    /**
+     * Calcula o fatorial do número fornecido
+     * @param num numero fornecido
+     * @author Isaac
+     * @return fatorial de num
+     */
+    public static double fatorial(double num) {
+        if (num <= 1) return 1;
+        else return num * fatorial(num - 1);
+    }
 }
 
